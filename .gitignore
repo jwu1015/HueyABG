@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+.next/
+out/
+build/
+dist/
+
+# Env and secrets — never commit API keys
+.env
+.env.local
+.env.*.local
+
+# Debug and IDE
+npm-debug.log*
+.DS_Store
+*.pem
+
+# Vercel
+.vercel
+
+# TypeScript
+next-env.d.ts
