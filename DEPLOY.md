@@ -18,15 +18,15 @@ git push -u origin main
 1. Go to **[vercel.com](https://vercel.com)** and sign in (GitHub is easiest).
 2. Click **Add New…** → **Project**.
 3. **Import** your GitHub repo. Vercel will detect Next.js.
-4. Before deploying, open **Environment Variables** and add:
+4. Before deploying, open **Environment Variables** and add (required for chat):
 
    | Name | Value |
    |------|--------|
-   | `OPENROUTER_API_KEY` | Your OpenRouter key |
-   | `PINECONE_API_KEY` | Your Pinecone key (for RAG) |
-   | `PINECONE_HOST` | Your Pinecone index host (e.g. `huy-rag-xxx.svc.region.pinecone.io`) |
+   | **`OPENROUTER_API_KEY`** | Your OpenRouter API key from [openrouter.ai](https://openrouter.ai) — **required**. (Do not use `OPENAI_API_KEY`; this app uses OpenRouter.) |
+   | `PINECONE_API_KEY` | Your Pinecone key (optional, for RAG) |
+   | `PINECONE_HOST` | Your Pinecone index host (optional, for RAG) |
 
-   (RAG is optional: if you skip Pinecone vars, the chat still works without RAG.)
+   Save the vars, then deploy. If you see "OpenAI API key is missing", you're missing **OPENROUTER_API_KEY** — add it in Vercel → Project → **Settings** → **Environment Variables**, then redeploy.
 
 5. Click **Deploy**. Vercel will build and give you a URL like `https://your-project.vercel.app`.
 

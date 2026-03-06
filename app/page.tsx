@@ -20,7 +20,7 @@ export default function Home() {
           <div className="hero-inner">
             <h1 className="hero-title">Hi, I&apos;m Huy</h1>
             <p className="hero-subtitle">
-              Let me show you how to rizz up ABGs.
+              I like ABGs.
             </p>
           </div>
         </section>

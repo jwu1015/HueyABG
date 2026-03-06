@@ -34,6 +34,13 @@ function getLastUserMessageContent(messages: Array<{ role: string; content?: unk
 
 export async function POST(req: Request) {
   try {
+    if (!process.env.OPENROUTER_API_KEY) {
+      console.error("OPENROUTER_API_KEY is not set (e.g. in Vercel Environment Variables)");
+      return new Response(
+        JSON.stringify({ error: "Server misconfigured: OPENROUTER_API_KEY is missing. Add it in Vercel → Project → Settings → Environment Variables." }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
     const { messages } = await req.json();
     let system = SYSTEM_PROMPT_BASE;
 
